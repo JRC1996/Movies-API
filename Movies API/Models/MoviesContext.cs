@@ -6,14 +6,15 @@ namespace Movies_API.Models;
 
 public partial class MoviesContext : DbContext
 {
-    private readonly IConfiguration _configuration;
-  
-    
-    public MoviesContext(DbContextOptions<MoviesContext> options): base(options)
+    public MoviesContext()
     {
-
     }
-    
+
+    public MoviesContext(DbContextOptions<MoviesContext> options)
+        : base(options)
+    {
+    }
+
     public virtual DbSet<Genre> Genres { get; set; }
 
     public virtual DbSet<Movie> Movies { get; set; }
@@ -21,7 +22,9 @@ public partial class MoviesContext : DbContext
     public virtual DbSet<MovieRating> MovieRatings { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
+
     
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Genre>(entity =>
@@ -63,6 +66,8 @@ public partial class MoviesContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
+            entity.HasIndex(e => e.Email, "IX_Users_Email").IsUnique();
+
             entity.Property(e => e.Email)
                 .HasMaxLength(50)
                 .IsUnicode(false);

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Movies_API.Models;
@@ -11,7 +12,7 @@ namespace Movies_API.Controllers
     [ApiController]
     public class MoviesController : ControllerBase
     {
-
+        
 
         private readonly MoviesContext _context;
         public MoviesController(MoviesContext context)
@@ -21,7 +22,7 @@ namespace Movies_API.Controllers
         }
 
         [HttpGet]
-
+        
         public IActionResult Get()
         {
             Response response = new Response();
@@ -44,6 +45,7 @@ namespace Movies_API.Controllers
                         }).ToList();
 
                     response.Success = 1;
+                    response.Message = "All ok";
                     response.Data = list;
 
 
@@ -64,6 +66,7 @@ namespace Movies_API.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult Add(MovieViewmodel moviesVm)
         {
             Response response = new Response();
@@ -90,6 +93,7 @@ namespace Movies_API.Controllers
 
 
                     response.Success = 1;
+                    response.Message = "Item added";
 
 
                 }
@@ -108,7 +112,7 @@ namespace Movies_API.Controllers
         }
 
         [HttpPut]
-
+        [Authorize]
 
         public IActionResult Put(MovieViewmodel moviesVm)
         {
@@ -134,6 +138,7 @@ namespace Movies_API.Controllers
 
                     transaction.Commit();
                     response.Success = 1;
+                    response.Message = "Item updated";
 
 
                 }
@@ -154,7 +159,7 @@ namespace Movies_API.Controllers
 
 
         [HttpDelete("{Id}")]
-
+        [Authorize]
         public IActionResult Delete(int Id)
         {
             Response response = new Response();
@@ -175,6 +180,7 @@ namespace Movies_API.Controllers
 
                     transaction.Commit();
                     response.Success = 1;
+                    response.Message = "Item deleted";
                 }
                 catch (Exception ex)
                 {
@@ -190,7 +196,7 @@ namespace Movies_API.Controllers
             return Ok(response);
         }
 
-
+        
     }
 
 

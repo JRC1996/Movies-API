@@ -4,14 +4,16 @@ using Microsoft.EntityFrameworkCore;
 using Movies_API.Models.Viewmodels;
 using Movies_API.Models;
 using Movies_API.Models.Response;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Movies_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class MoviesRatingController : ControllerBase
     {
-
+        
         private readonly MoviesContext _context;
 
         public MoviesRatingController(MoviesContext context)
@@ -31,6 +33,7 @@ namespace Movies_API.Controllers
             {
                 var list = _context.MovieRatings.ToList();
                 response.Success = 1;
+                response.Message = "All ok";
                 response.Data = list;
 
 
@@ -61,6 +64,7 @@ namespace Movies_API.Controllers
                 _context.MovieRatings.Add(movieRating);
                 _context.SaveChanges();
                 response.Success = 1;
+                response.Message = "All ok";
 
 
 
@@ -93,6 +97,7 @@ namespace Movies_API.Controllers
                 _context.Entry(movieRating).State = EntityState.Modified;
                 _context.SaveChanges();
                 response.Success = 1;
+                response.Message = "All ok";
 
 
 
@@ -125,7 +130,7 @@ namespace Movies_API.Controllers
                 _context.Remove(movieRating);
                 _context.SaveChanges();
                 response.Success = 1;
-
+                response.Message = "All ok";
 
 
 
@@ -142,6 +147,7 @@ namespace Movies_API.Controllers
 
             return Ok(response);
         }
+        
     }
 
 }

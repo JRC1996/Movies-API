@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Movies.Models.ViewModels;
@@ -9,9 +10,10 @@ namespace Movies_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class GenresController : ControllerBase
     {
-
+        
         private readonly MoviesContext _context;
 
         public GenresController(MoviesContext context)
@@ -31,6 +33,7 @@ namespace Movies_API.Controllers
             {
                 var list = _context.Genres.ToList();
                 response.Success = 1;
+                response.Message = "All ok";
                 response.Data = list;
 
 
@@ -61,7 +64,7 @@ namespace Movies_API.Controllers
                 _context.Genres.Add(genre);
                 _context.SaveChanges();
                 response.Success = 1;
-
+                response.Message = "All ok";
 
 
 
@@ -71,6 +74,7 @@ namespace Movies_API.Controllers
             catch (Exception ex)
             {
                 response.Message = ex.Message;
+                
             }
 
 
@@ -93,7 +97,7 @@ namespace Movies_API.Controllers
                 _context.Entry(genre).State = EntityState.Modified;
                 _context.SaveChanges();
                 response.Success = 1;
-
+                response.Message = "All ok";
 
 
 
@@ -125,7 +129,7 @@ namespace Movies_API.Controllers
                 _context.Remove(genre);
                 _context.SaveChanges();
                 response.Success = 1;
-
+                response.Message = "All ok";
 
 
 
@@ -142,6 +146,6 @@ namespace Movies_API.Controllers
 
             return Ok(response);
         }
-
+        
     }
 }
