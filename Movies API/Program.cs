@@ -56,7 +56,7 @@ builder.Services.AddAuthentication(options =>
     });
    
 
-
+//DB Connection
 builder.Services.AddDbContext<MoviesContext>(options => 
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 

@@ -10,7 +10,7 @@ namespace Movies_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    
     public class MoviesRatingController : ControllerBase
     {
         
@@ -50,7 +50,7 @@ namespace Movies_API.Controllers
 
 
         [HttpPost]
-
+        [Authorize]
         public IActionResult Post(MovieRatingViewmodel moviesRatingsVM)
         {
 
@@ -82,7 +82,7 @@ namespace Movies_API.Controllers
         }
 
         [HttpPut]
-
+        [Authorize]
         public IActionResult Put(MovieRatingViewmodel moviesRatingsVM)
         {
 
@@ -116,6 +116,7 @@ namespace Movies_API.Controllers
         }
 
         [HttpDelete("{Id}")]
+        [Authorize]
         public IActionResult Delete(int Id)
         {
 
