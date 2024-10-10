@@ -10,7 +10,7 @@ namespace Movies_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    
     public class GenresController : ControllerBase
     {
         
@@ -50,7 +50,7 @@ namespace Movies_API.Controllers
 
 
         [HttpPost]
-
+        [Authorize]
         public IActionResult Post(GenreViewModel genresVM)
         {
 
@@ -82,7 +82,7 @@ namespace Movies_API.Controllers
         }
 
         [HttpPut]
-
+        [Authorize]
         public IActionResult Put(GenreViewModel genreVM)
         {
 
@@ -115,6 +115,7 @@ namespace Movies_API.Controllers
         }
 
         [HttpDelete("{Id}")]
+        [Authorize]
         public IActionResult Delete(int Id)
         {
 
