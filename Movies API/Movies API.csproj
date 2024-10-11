@@ -7,6 +7,7 @@
     <RootNamespace>Movies_API</RootNamespace>
     <UserSecretsId>f991b63c-16e7-4157-ba58-9920585e0de2</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>

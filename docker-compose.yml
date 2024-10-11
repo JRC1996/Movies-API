@@ -1,0 +1,32 @@
+networks:
+    moviesapi:     
+  
+
+
+services:
+  moviesApidb:
+    container_name: demo-movies-api-db
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports: 
+      - 8002:1433
+    environment: 
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Password@1234
+    networks:
+      - moviesapi
+  moviesapi:  
+    container_name: demo-movies-api
+    image: ${DOCKER_REGISTRY-}moviesapi
+    build:
+      context: .
+      dockerfile: Movies API/Dockerfile
+    ports:
+      - 8001:8080
+    depends_on:
+      - moviesApidb
+    environment: 
+      - DB_HOST=moviesApidb
+      - DB_NAME=Movies
+      - MSSQL_SA_PASSWORD=Password@1234
+    networks:
+      - moviesapi
