@@ -12,6 +12,8 @@ services:
     environment: 
       - ACCEPT_EULA=Y
       - MSSQL_SA_PASSWORD=Password@1234
+    volumes:
+      - db_data:/var/opt/mssql
     networks:
       - moviesapi
   moviesapi:  
@@ -30,3 +32,5 @@ services:
       - MSSQL_SA_PASSWORD=Password@1234
     networks:
       - moviesapi
+volumes:
+  db_data:
