@@ -10,10 +10,9 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 
+
 //CORS
 var cors = "_cors";
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
 builder.Services.AddCors(options => {
     options.AddPolicy(name: cors, policy =>
     {
@@ -54,9 +53,10 @@ builder.Services.AddAuthentication(options =>
 
         };
     });
-   
+
 
 //DB Connection
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<MoviesContext>(options => 
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
