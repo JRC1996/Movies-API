@@ -18,7 +18,7 @@ services:
       - moviesapi
   moviesapi:  
     container_name: demo-movies-api
-    image: ${DOCKER_REGISTRY-}moviesapi
+    image: jrcjancy/moviesapi
     build:
       context: .
       dockerfile: Movies API/Dockerfile
