@@ -136,5 +136,61 @@ DELETE/api/genres/id
 ![Response DELETE Genres](https://github.com/user-attachments/assets/99215160-bda2-40d6-b0ef-23eae57f2ea9)
 
 
+D. Movies Rating
+GET /api/moviesRating
+
+• Description: Retrieve a list of movie ratings.
+• Response
+
+![GET Rating](https://github.com/user-attachments/assets/7de119a5-48d6-460d-b792-a4782e2c12c2)
+
+
+POST/api/moviesRating
+
+• Description: Add a movie rating to a list of movie ratings.
+• Headers: Authorization: Bearer <JWT_TOKEN>
+• Request body
+
+
+![POST Rating](https://github.com/user-attachments/assets/e57aca90-fcf0-46fa-a543-a37010873dc5)
+
+• Response
+
+![Response POST Rating](https://github.com/user-attachments/assets/99215160-bda2-40d6-b0ef-23eae57f2ea9)
+
+
+PUT/api/moviesRating
+
+• Description: Updates a movie rating to a list of movie ratings.
+• Headers: Authorization: Bearer <JWT_TOKEN>
+• Request body
+
+![PUT Rating](https://github.com/user-attachments/assets/ca7e6b8a-06b4-4f28-9fa1-76b09e9ec57b)
+
+• Response
+
+![Response PUT Rating](https://github.com/user-attachments/assets/99215160-bda2-40d6-b0ef-23eae57f2ea9)
+
+
+DELETE/api/ moviesRating/id
+
+• Description: Deletes a movie rating to a list of movie ratings.
+• Headers: Authorization: Bearer <JWT_TOKEN>
+• Response
+
+![Response DELETE Rating](https://github.com/user-attachments/assets/99215160-bda2-40d6-b0ef-23eae57f2ea9)
+
+
+Testing with Postman
+
+To test the API:
+1. Use Postman to send a POST request to /api/users/login to retrieve a JWT token.
+2. Use the token in the Authorization header for subsequent requests to secured endpoints
+(e.g POST/api/movies).
+
+Example Authorization header:
+
+![Bearer Token](https://github.com/user-attachments/assets/28d03f7c-b870-4f33-a126-ce6be7dd0f27)
+
 
 --------------------------------------------------------------------------------------------
