@@ -44,6 +44,12 @@ POST /api/users/login
 • Request Body:
 ![Request users](https://github.com/user-attachments/assets/60b68ad2-8af5-469e-9ccb-845002b3ccba)
 
+{
+    "email":"Jane@gmail.com",
+    "password":"qwerty"
+
+}
+
 • Response:
 ![Response users](https://github.com/user-attachments/assets/76d86064-bb6f-40f0-a2a5-b154c73b9670)
 
@@ -64,6 +70,16 @@ POST/api/movies
 • Request body
 
 ![POST Movies](https://github.com/user-attachments/assets/a09c0419-d9d8-44b1-8b2d-83d8bc30df20)
+
+
+{
+    "Name": "The Batman",
+    "IdGenre": 4,
+    "IdAgeRating": 3,
+    "ReleaseDate": "2022-03-04"
+
+}
+
 
 • Response
 
