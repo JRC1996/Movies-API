@@ -32,8 +32,8 @@ B. Running the Application
 Docker
 1. To run the project in docker:
    
-o Search for docker-compose.yml file.
-o Run the command docker-compose up -d. from the directory where the dockercompose file is located.
+- Search for docker-compose.yml file.
+- Run the command docker-compose up -d. from the directory where the dockercompose file is located.
 
 API Endpoints
 
