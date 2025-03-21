@@ -151,6 +151,11 @@ PUT/api/genres
 
 ![PUT Genres](https://github.com/user-attachments/assets/6a1e7f88-f06f-4907-9637-6452bb918621)
 
+{
+   "id":8,
+   "genre":"Drama"
+}
+
 • Response
 
 ![Response PUT Genres](https://github.com/user-attachments/assets/99215160-bda2-40d6-b0ef-23eae57f2ea9)
@@ -183,6 +188,10 @@ POST/api/moviesRating
 
 ![POST Rating](https://github.com/user-attachments/assets/e57aca90-fcf0-46fa-a543-a37010873dc5)
 
+{
+   "rating": "R"
+}
+
 • Response
 
 ![Response POST Rating](https://github.com/user-attachments/assets/99215160-bda2-40d6-b0ef-23eae57f2ea9)
@@ -195,6 +204,11 @@ PUT/api/moviesRating
 • Request body
 
 ![PUT Rating](https://github.com/user-attachments/assets/ca7e6b8a-06b4-4f28-9fa1-76b09e9ec57b)
+
+{
+   "id": 6,
+   "rating": "RE"
+}
 
 • Response
 
