@@ -94,6 +94,15 @@ PUT/api/movies
 
 ![PUT Movies](https://github.com/user-attachments/assets/ac3e6c09-46d0-4fb4-ae31-087cbbc4ef49)
 
+{ 
+    "Id": 4,
+    "Name": "Aliens: the return",
+    "IdGenre": 1,
+    "IdAgeRating": 4,
+    "ReleaseDate": "1986-07-14"
+
+}
+
 • Response
 
 ![Response PUT](https://github.com/user-attachments/assets/4ef630d5-a429-49ec-9b08-e3a8ae8f29e2)
@@ -137,15 +146,6 @@ PUT/api/genres
 • Request body
 
 ![PUT Genres](https://github.com/user-attachments/assets/6a1e7f88-f06f-4907-9637-6452bb918621)
-
-{ 
-    "Id": 4,
-    "Name": "Aliens: the return",
-    "IdGenre": 1,
-    "IdAgeRating": 4,
-    "ReleaseDate": "1986-07-14"
-
-}
 
 • Response
 
