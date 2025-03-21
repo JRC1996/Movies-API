@@ -134,6 +134,10 @@ POST/api/genres
 
 ![POST Genres](https://github.com/user-attachments/assets/68787850-d328-4a26-a2e0-d1c7421a12da)
 
+{
+   "genre":"Western"
+}
+
 • Response
 
 ![Response POST Genres](https://github.com/user-attachments/assets/99215160-bda2-40d6-b0ef-23eae57f2ea9)
