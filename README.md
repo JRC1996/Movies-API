@@ -138,6 +138,15 @@ PUT/api/genres
 
 ![PUT Genres](https://github.com/user-attachments/assets/6a1e7f88-f06f-4907-9637-6452bb918621)
 
+{ 
+    "Id": 4,
+    "Name": "Aliens: the return",
+    "IdGenre": 1,
+    "IdAgeRating": 4,
+    "ReleaseDate": "1986-07-14"
+
+}
+
 • Response
 
 ![Response PUT Genres](https://github.com/user-attachments/assets/99215160-bda2-40d6-b0ef-23eae57f2ea9)
